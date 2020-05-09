@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:duration="1000">
+        <KeyFrameSet>
+            <KeyAttribute
+                motion:motionTarget="@+id/podcast_image_large"
+                motion:framePosition="20"
+                android:alpha="0" />
+            <KeyAttribute
+                motion:motionTarget="@+id/podcast_image_large"
+                motion:framePosition="80"
+                android:alpha="1" />
+
+            <KeyAttribute
+                motion:motionTarget="@+id/podcast_image"
+                motion:framePosition="50"
+                android:alpha="0" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/podcast_image"
+            android:layout_height="72dp"
+            android:layout_width="72dp">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/podcast_image_large"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            motion:layout_constraintTop_toBottomOf="@id/podcast_title"
+            motion:layout_constraintDimensionRatio="H,2:1"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/podcast_title"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            motion:layout_constraintStart_toEndOf="@id/podcast_image"
+            motion:layout_constraintTop_toTopOf="@id/podcast_image"
+            motion:layout_constraintBottom_toBottomOf="@id/podcast_image"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/podcast_image"
+            android:layout_height="72dp"
+            android:layout_width="72dp">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+
+        <Constraint
+            android:id="@id/podcast_image_large"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            motion:layout_constraintTop_toBottomOf="@id/podcast_title"
+            motion:layout_constraintDimensionRatio="H,2:1"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/podcast_title"
+            android:layout_height="72dp"
+            android:layout_width="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+    </ConstraintSet>
+</MotionScene>

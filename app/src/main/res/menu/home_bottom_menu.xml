@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/discover"
+        android:title="@string/discover_title"
+        android:icon="@drawable/explore_24dp"/>
+
+    <item
+        android:id="@+id/library"
+        android:title="@string/library_title"
+        android:icon="@drawable/library_music_24dp"/>
+
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings_title"
+        android:icon="@drawable/settings_24dp"/>
+</menu>

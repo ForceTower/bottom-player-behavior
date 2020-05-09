@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="pt_BR">
+    <string name="app_name">Podcasts</string>
+    <string name="discover_title">Descobrir</string>
+    <string name="library_title">Biblioteca</string>
+    <string name="settings_title">Configurações</string>
+</resources>

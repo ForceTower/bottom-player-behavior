@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/content_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C4A4FF"
+        app:layoutDescription="@xml/mini_player_scene"
+        app:paddingBottomSystemWindowInsets="@{true}"
+        app:paddingEndSystemWindowInsets="@{true}"
+        app:paddingStartSystemWindowInsets="@{true}">
+
+        <ImageView
+            android:id="@+id/podcast_image"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{&quot;https://images.unsplash.com/photo-1589002771169-04a5246f84d2&quot;}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/podcast_title"
+            android:layout_width="0dp"
+            android:layout_height="72dp"
+            android:padding="8dp"
+            android:gravity="center"
+            android:text="Hey hey hey"
+            android:textAlignment="gravity"
+            android:textFontWeight="500"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/podcast_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem" />
+
+        <ImageView
+            android:id="@+id/podcast_image_large"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:imageUrl="@{&quot;https://images.unsplash.com/photo-1589002771169-04a5246f84d2&quot;}"
+            app:layout_constraintTop_toBottomOf="@id/podcast_title"
+            app:layout_constraintDimensionRatio="H,2:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>
