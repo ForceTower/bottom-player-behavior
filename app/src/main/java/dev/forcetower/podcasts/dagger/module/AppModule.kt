@@ -9,7 +9,7 @@ import dagger.Provides
 import dev.forcetower.podcasts.PodcastsApp
 import dev.forcetower.podcasts.core.music.MusicServiceConnection
 import dev.forcetower.podcasts.core.service.converters.TimeConverters
-import dev.forcetower.podcasts.service.MusicService
+import dev.forcetower.podcasts.service.music.MusicService
 import org.threeten.bp.LocalDateTime
 import javax.inject.Singleton
 

@@ -9,6 +9,7 @@ import dev.forcetower.podcasts.PodcastsApp
 import dev.forcetower.podcasts.dagger.module.ActivityModule
 import dev.forcetower.podcasts.dagger.module.AppModule
 import dev.forcetower.podcasts.dagger.module.NetworkModule
+import dev.forcetower.podcasts.dagger.module.ServiceModule
 import dev.forcetower.podcasts.dagger.module.ViewModelModule
 
 @Component(modules = [
@@ -18,7 +19,8 @@ import dev.forcetower.podcasts.dagger.module.ViewModelModule
     NetworkModule::class,
 //    DatabaseModule::class,
     ViewModelModule::class,
-    ActivityModule::class
+    ActivityModule::class,
+    ServiceModule::class
 ])
 interface AppComponent : AndroidInjector<PodcastsApp> {
     @Component.Builder

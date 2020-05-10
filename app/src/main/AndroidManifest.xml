@@ -24,7 +24,7 @@
         </activity>
 
         <service
-            android:name=".service.MusicService"
+            android:name=".service.music.MusicService"
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedService">

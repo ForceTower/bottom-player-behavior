@@ -3,4 +3,10 @@
     <string name="discover_title">Descobrir</string>
     <string name="library_title">Biblioteca</string>
     <string name="settings_title">Configurações</string>
+    <string name="notification_skip_to_previous">Anterior</string>
+    <string name="notification_play">Play</string>
+    <string name="notification_pause">Pause</string>
+    <string name="notification_skip_to_next">Próximo</string>
+    <string name="notification_channel">Podcast</string>
+    <string name="notification_channel_description">Playback dos podcasts</string>
 </resources>
