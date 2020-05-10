@@ -11,7 +11,9 @@
             <KeyAttribute
                 motion:motionTarget="@+id/podcast_image_large"
                 motion:framePosition="20"
-                android:alpha="0" />
+                android:alpha="0"
+                android:translationY="56dp"/>
+
             <KeyAttribute
                 motion:motionTarget="@+id/podcast_image_large"
                 motion:framePosition="80"
