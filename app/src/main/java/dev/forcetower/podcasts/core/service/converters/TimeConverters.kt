@@ -12,26 +12,10 @@ object TimeConverters {
     val ZDT_DESERIALIZER: JsonDeserializer<ZonedDateTime> = JsonDeserializer { json, _, _ ->
         val jsonPrimitive = json.asJsonPrimitive
         try {
-            // if provided as String - '2011-12-03 10:15:30'
             if (jsonPrimitive.isString) {
-                val patterns = arrayOf(
-                    "yyyy-MM-dd'T'HH:mm:ssZ",
-                    "yyyy-MM-dd'T'HH:mm:ssX",
-                    "yyyy-MM-dd'T'HH:mm:ss.SSSSSS'Z'",
-                    "yyyy-MM-dd HH:mm:ss",
-                    "yyyy-MM-dd'T'HH:mmX",
-                    "yyyy-MM-dd'T'HH:mmZ"
-                )
-                for (pattern in patterns) {
-                    try {
-                        val parser = DateTimeFormatter.ofPattern(pattern)
-                        return@JsonDeserializer ZonedDateTime.parse(jsonPrimitive.asString, parser)
-                    } catch (t: Throwable) { }
-                }
-            }
-
-            // if provided as Long
-            if (jsonPrimitive.isNumber) {
+                val parser = DateTimeFormatter.ISO_OFFSET_DATE_TIME
+                return@JsonDeserializer ZonedDateTime.parse(jsonPrimitive.asString, parser)
+            } else if (jsonPrimitive.isNumber) {
                 return@JsonDeserializer ZonedDateTime.ofInstant(Instant.ofEpochMilli(jsonPrimitive.asLong), ZoneId.systemDefault())
             }
         } catch (e: RuntimeException) {
